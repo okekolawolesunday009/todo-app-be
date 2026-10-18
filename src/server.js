@@ -3,7 +3,7 @@ import { createClient } from 'redis';
 import { createApp } from './app.js';
 import dotenv from 'dotenv';
 
-dotenv.config({ path: '/opt/app/.env', override: true });
+dotenv.config({ path: process.env.APP_PATH?.concat('/.env') || './.env', override: true });
 
 const { Pool } = pg;
 const port = Number.parseInt(process.env.PORT ?? '3000', 10);
