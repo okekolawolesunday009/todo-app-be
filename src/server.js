@@ -1,6 +1,9 @@
 import pg from 'pg';
 import { createClient } from 'redis';
 import { createApp } from './app.js';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env' });
 
 const { Pool } = pg;
 const port = Number.parseInt(process.env.PORT ?? '3000', 10);
